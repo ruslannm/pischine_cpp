@@ -9,15 +9,8 @@ bool bsp(Point const a, Point const b, Point const c, Point const point)
 	Fixed sign3 = (c.getX() - point.getX()) * (a.getY() - c.getY()) -
 				  (a.getX() - c.getX()) * (c.getY() - point.getY());
 
-	if ((sign1.getRawBits() > 0 && sign2.getRawBits() > 0 &&
+	return ((sign1.getRawBits() > 0 && sign2.getRawBits() > 0 &&
 		 sign3.getRawBits() > 0) ||
 		(sign1.getRawBits() < 0 && sign2.getRawBits() < 0 &&
-		 sign3.getRawBits() < 0))
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+		 sign3.getRawBits() < 0));
 };

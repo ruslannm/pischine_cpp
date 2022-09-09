@@ -15,4 +15,3 @@ int main(void)
 	Zombie::randomChump("Primer");
 	return (0);
 }
-

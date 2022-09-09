@@ -1,15 +1,12 @@
 #include "Fixed.hpp"
 
-Fixed::Fixed(void) : _value(0)
-{
-	return;
-};
+Fixed::Fixed(void) : _value(0) {};
 
 Fixed::Fixed(int const value) : _value(value)
 {
 	this->_value = value * (1 << this->_fractional);
 	return;
-};
+}
 
 Fixed::Fixed(float const value)
 {
@@ -32,10 +29,7 @@ Fixed &Fixed::operator=(Fixed const &rhs)
 	return *this;
 };
 
-Fixed::~Fixed(void)
-{
-	return;
-};
+Fixed::~Fixed(void) {};
 
 int Fixed::getRawBits(void) const
 {
@@ -155,52 +149,23 @@ Fixed Fixed::operator--(int)
 
 Fixed &Fixed::min(Fixed &a, Fixed &b)
 {
-	if (a < b)
-	{
-		return a;
-	}
-	else
-	{
-		return b;
-	}
+	return (a < b) ? a : b;
 };
 
 const Fixed &Fixed::min(Fixed const &a, Fixed const &b)
 {
-	if (a < b)
-	{
-		return a;
-	}
-	else
-	{
-		return b;
-	}
+	return (a < b) ? a : b;
 };
 
 Fixed &Fixed::max(Fixed &a, Fixed &b)
 {
-	if (a > b)
-	{
-		return a;
-	}
-	else
-	{
-		return b;
-	}
+	return (a > b) ? a : b;
 };
 
 const Fixed &Fixed::max(Fixed const &a, Fixed const &b)
 {
-	if (a > b)
-	{
-		return a;
-	}
-	else
-	{
-		return b;
-	}
+	return (a > b) ? a : b;
 };
-
 
 const int Fixed::_fractional = 8;
 
