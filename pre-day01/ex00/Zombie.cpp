@@ -1,9 +1,13 @@
 #include "Zombie.hpp"
 
-void Zombie::announce(void){
+void Zombie::announce(void)
+{
 	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+	return;
 };
 
-Zombie::~Zombie(){
+Zombie::~Zombie(void)
+{
 	std::cout << name << ": destroyed" << std::endl;
+	return;
 };

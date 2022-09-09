@@ -1,6 +1,7 @@
 #include "Zombie.hpp"
 
-int main(){
+int main(void)
+{
 	Zombie *zombie;
 	zombie = Zombie::newZombie("Parasite");
 	zombie->announce();

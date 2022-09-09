@@ -1,6 +1,6 @@
 #include "Zombie.hpp"
 
-int main()
+int main(void)
 {
 	Zombie *zombies;
 	int n = 5;
@@ -12,4 +12,3 @@ int main()
 	delete[] zombies;
 	return (0);
 }
-

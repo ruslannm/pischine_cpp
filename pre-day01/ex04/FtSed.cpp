@@ -20,12 +20,14 @@ FtSed::FtSed(std::string filename) :
 		std::cout << "Файл " << filename << " не открыт" << std::endl;
 		_available = false;
 	}
+	return;
 };
 
-FtSed::~FtSed()
+FtSed::~FtSed(void )
 {
 	_ifs.close();
 	_ofs.close();
+	return;
 };
 
 bool FtSed::replace(std::string strFrom, std::string strTo)

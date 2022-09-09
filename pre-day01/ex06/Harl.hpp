@@ -11,7 +11,7 @@ public:
 
 	void filter(std::string);
 
-	Harl();
+	Harl(void);
 
 private:
 	void debug(void);
@@ -27,6 +27,5 @@ private:
 
 	size_t _getLevelNumber(std::string);
 };
-
 
 #endif

@@ -10,7 +10,8 @@ class FtSed
 public:
 	FtSed(std::string);
 
-	~FtSed();
+	~FtSed(void);
+
 	bool replace(std::string, std::string);
 
 private:
