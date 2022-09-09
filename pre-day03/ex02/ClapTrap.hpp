@@ -21,11 +21,12 @@ public:
 
 	void beRepaired(unsigned int amount);
 
-private:
+protected:
 	std::string name;
 	unsigned int hitPoints;
 	unsigned int energyPoints;
 	unsigned attackDamage;
 };
+
 
 #endif

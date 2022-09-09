@@ -4,7 +4,7 @@ ClapTrap::ClapTrap(std::string const name) : name(name), hitPoints(10),
 											 energyPoints(10),
 											 attackDamage(0)
 {
-	std::cout << "Constructor called for " << name
+	std::cout << "Constructor called for " << this->name
 			  << " hitPoints: " << hitPoints
 			  << ", energyPoint: " << energyPoints
 			  << ", attackDamage: " << attackDamage << std::endl;

@@ -1,30 +1,30 @@
-#include "ScavTrap.hpp"
+#include "FragTrap.hpp"
 
-ScavTrap::ScavTrap(std::string const name) : ClapTrap(name)
+FragTrap::FragTrap(std::string const name) : ClapTrap(name)
 {
 	this->hitPoints = 100;
-	this->energyPoints = 50;
-	this->attackDamage = 20;
-	std::cout << "Constructor called for ScavTrap " << this->name
+	this->energyPoints = 100;
+	this->attackDamage = 30;
+	std::cout << "Constructor called for FragTrap " << this->name
 			  << " hitPoints: " << hitPoints
 			  << ", energyPoint: " << energyPoints
 			  << ", attackDamage: " << attackDamage << std::endl;
 };
 
-ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src.name)
+FragTrap::FragTrap(FragTrap const &src) : ClapTrap(src.name)
 {
 	this->hitPoints = src.hitPoints;
 	this->energyPoints = src.energyPoints;
 	this->attackDamage = src.attackDamage;
 
 
-	std::cout << "Copy constructor called for ClapTrap" << name
+	std::cout << "Copy constructor called for FragTrap" << name
 			  << " hitPoints: " << hitPoints
 			  << ", energyPoint: " << energyPoints
 			  << ", attackDamage: " << attackDamage << std::endl;
 };
 
-ScavTrap &ScavTrap::operator=(ScavTrap const &rhs)
+FragTrap &FragTrap::operator=(FragTrap const &rhs)
 {
 	if (this != &rhs)
 	{
@@ -33,23 +33,24 @@ ScavTrap &ScavTrap::operator=(ScavTrap const &rhs)
 		this->energyPoints = rhs.energyPoints;
 		this->attackDamage = rhs.attackDamage;
 	}
-	std::cout << "Assignment operator called for ScavTrap " << name
+	std::cout << "Assignment operator called for FragTrap " << name
 			  << " hitPoints: " << hitPoints
 			  << ", energyPoint: " << energyPoints
 			  << ", attackDamage: " << attackDamage << std::endl;
 	return *this;
 };
 
-ScavTrap::~ScavTrap(void)
+FragTrap::~FragTrap(void)
 {
-	std::cout << "Destructor called for ScavTrap " << name
+	std::cout << "Destructor called for FragTrap " << this->name
 			  << " hitPoints: " << hitPoints
 			  << ", energyPoint: " << energyPoints
 			  << ", attackDamage: " << attackDamage << std::endl;
+	return;
 };
 
-void ScavTrap::guardGate()
+void FragTrap::highFivesGuys(void)
 {
-	std::cout << "ScavTrap " << name
-			  << " is now in Gate keeper mode." << std::endl;
+	std::cout << "FragTrap " << name
+			  << " request a positive high fives." << std::endl;
 };
