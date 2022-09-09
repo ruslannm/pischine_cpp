@@ -4,13 +4,14 @@ DiamondTrap::DiamondTrap(std::string const name) : ClapTrap(
 		name + "_clap_name"), FragTrap(name), ScavTrap(name)
 {
 	this->name = name;
-	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = ScavTrap::energyPoints;
-	this->attackDamage = FragTrap::attackDamage;
-	std::cout << "Constructor called for DiamondTrap " << name
-			  << " hitPoints: " << hitPoints
-			  << ", energyPoint: " << energyPoints
-			  << ", attackDamage: " << attackDamage << std::endl;
+	this->hitPoints = 100;
+	this->energyPoints = 50;
+	this->attackDamage = 30;
+	std::cout << "Constructor called for DiamondTrap " << this->name
+			  << " hitPoints: " << this->hitPoints
+			  << ", energyPoint: " << this->energyPoints
+			  << ", attackDamage: " << this->attackDamage << std::endl;
+	return;
 };
 
 DiamondTrap::DiamondTrap(DiamondTrap const &src) : ClapTrap(
@@ -20,12 +21,11 @@ DiamondTrap::DiamondTrap(DiamondTrap const &src) : ClapTrap(
 	this->hitPoints = src.hitPoints;
 	this->energyPoints = src.energyPoints;
 	this->attackDamage = src.attackDamage;
-
-
-	std::cout << "Copy constructor called for DiamondTrap" << name
-			  << " hitPoints: " << hitPoints
-			  << ", energyPoint: " << energyPoints
-			  << ", attackDamage: " << attackDamage << std::endl;
+	std::cout << "Copy constructor called for DiamondTrap" << this->name
+			  << " hitPoints: " << this->hitPoints
+			  << ", energyPoint: " << this->energyPoints
+			  << ", attackDamage: " << this->attackDamage << std::endl;
+	return;
 };
 
 DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs)
@@ -37,10 +37,10 @@ DiamondTrap &DiamondTrap::operator=(DiamondTrap const &rhs)
 		this->energyPoints = rhs.energyPoints;
 		this->attackDamage = rhs.attackDamage;
 	}
-	std::cout << "Assignment operator called for DiamondTrap " << name
-			  << " hitPoints: " << hitPoints
-			  << ", energyPoint: " << energyPoints
-			  << ", attackDamage: " << attackDamage << std::endl;
+	std::cout << "Assignment operator called for DiamondTrap " << this->name
+			  << " hitPoints: " << this->hitPoints
+			  << ", energyPoint: " << this->energyPoints
+			  << ", attackDamage: " << this->attackDamage << std::endl;
 	return *this;
 };
 
@@ -50,15 +50,18 @@ DiamondTrap::~DiamondTrap(void)
 			  << " hitPoints: " << hitPoints
 			  << ", energyPoint: " << energyPoints
 			  << ", attackDamage: " << attackDamage << std::endl;
+	return;
 };
 
 void DiamondTrap::attack(const std::string &target)
 {
 	ScavTrap::attack(target);
+	return;
 }
 
 void DiamondTrap::whoAmI()
 {
 	std::cout << "DiamondTrap name " << name
 			  << ", ClapTrap name = " << ClapTrap::name << std::endl;
+	return;
 };

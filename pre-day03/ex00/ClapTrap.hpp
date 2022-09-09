@@ -25,7 +25,7 @@ private:
 	std::string name;
 	unsigned int hitPoints;
 	unsigned int energyPoints;
-	unsigned attackDamage;
+	unsigned int attackDamage;
 };
 
 #endif

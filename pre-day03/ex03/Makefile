@@ -1,7 +1,7 @@
 BIN = diamondtrap
 
-CXX = clang++
-CXX_FLAGS = -Wall -Wextra -Werror -Wshadow
+CXX = c++
+CXX_FLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
 
 CPP = $(wildcard *.cpp)
 OBJ = $(CPP:%.cpp=%.o)

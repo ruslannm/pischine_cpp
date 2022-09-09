@@ -9,6 +9,7 @@ ScavTrap::ScavTrap(std::string const name) : ClapTrap(name)
 			  << " hitPoints: " << hitPoints
 			  << ", energyPoint: " << energyPoints
 			  << ", attackDamage: " << attackDamage << std::endl;
+	return;
 };
 
 ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src.name)
@@ -22,6 +23,7 @@ ScavTrap::ScavTrap(ScavTrap const &src) : ClapTrap(src.name)
 			  << " hitPoints: " << hitPoints
 			  << ", energyPoint: " << energyPoints
 			  << ", attackDamage: " << attackDamage << std::endl;
+	return;
 };
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &rhs)
@@ -46,10 +48,29 @@ ScavTrap::~ScavTrap(void)
 			  << " hitPoints: " << hitPoints
 			  << ", energyPoint: " << energyPoints
 			  << ", attackDamage: " << attackDamage << std::endl;
+	return;
+};
+
+void ScavTrap::attack(const std::string &target)
+{
+	if (energyPoints)
+	{
+		--energyPoints;
+		++attackDamage;
+		std::cout << "ScavTrap " << name << " attacks " << target
+				  << ", causing "
+				  << attackDamage << " points of damage!" << std::endl;
+	}
+	else
+	{
+		std::cout << "ClapTrap " << name << " can not attack." << std::endl;
+	}
+	return;
 };
 
 void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << name
 			  << " is now in Gate keeper mode." << std::endl;
+	return;
 };

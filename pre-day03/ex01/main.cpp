@@ -1,8 +1,7 @@
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 int main(void){
-	ClapTrap a("Fist");
+	ScavTrap a("Fist");
 	ScavTrap b("Second");
 
 	for(size_t i = 0; i != 12; ++i)

@@ -8,6 +8,7 @@ ClapTrap::ClapTrap(std::string const name) : name(name), hitPoints(10),
 			  << " hitPoints: " << hitPoints
 			  << ", energyPoint: " << energyPoints
 			  << ", attackDamage: " << attackDamage << std::endl;
+	return;
 };
 
 ClapTrap::ClapTrap(ClapTrap const &src) : name(src.name),
@@ -19,6 +20,7 @@ ClapTrap::ClapTrap(ClapTrap const &src) : name(src.name),
 			  << " hitPoints: " << hitPoints
 			  << ", energyPoint: " << energyPoints
 			  << ", attackDamage: " << attackDamage << std::endl;
+	return;
 };
 
 ClapTrap &ClapTrap::operator=(ClapTrap const &rhs)
@@ -51,13 +53,16 @@ void ClapTrap::attack(const std::string &target)
 	if (energyPoints)
 	{
 		--energyPoints;
-        ++attackDamage;
+		++attackDamage;
 		std::cout << "ClapTrap " << name << " attacks " << target
 				  << ", causing "
 				  << attackDamage << " points of damage!" << std::endl;
-	} else {
+	}
+	else
+	{
 		std::cout << "ClapTrap " << name << " can not attack." << std::endl;
 	}
+	return;
 };
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -72,6 +77,7 @@ void ClapTrap::takeDamage(unsigned int amount)
 	}
 	std::cout << "ClapTrap " << name << " has " << hitPoints
 			  << " hit points after taking damage  causing." << std::endl;
+	return;
 };
 
 void ClapTrap::beRepaired(unsigned int amount)
@@ -82,7 +88,10 @@ void ClapTrap::beRepaired(unsigned int amount)
 		--energyPoints;
 		std::cout << "ClapTrap " << name << " repared and has "
 				  << hitPoints << " hit points!" << std::endl;
-	} else {
+	}
+	else
+	{
 		std::cout << "ClapTrap " << name << " can not repared" << std::endl;
 	}
+	return;
 };
