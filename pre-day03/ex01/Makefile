@@ -15,6 +15,9 @@ $(BIN) : $(OBJ)
 	$(CXX) $(CXX_FLAGS) -MMD -c $< -o $@
 
 .PHONY: all re clean fclean
+
+all : $(BIN)
+
 clean :
 	rm -f $(OBJ) $(DEP)
 fclean: clean
