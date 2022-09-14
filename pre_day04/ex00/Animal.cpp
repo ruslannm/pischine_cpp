@@ -40,7 +40,7 @@ Animal::~Animal(void)
 
 void Animal::makeSound(void) const
 {
-	std::cout << "Animal " << this->type << " makeSound" << std::endl;
+	return;
 };
 
 std::string Animal::getType(void) const

@@ -32,18 +32,22 @@ int main(void)
 	}
 
 	std::cout << std::endl << "Test deep copy" << std::endl;
-	Animal * cat= new Cat();
-	cat->setIdea(0, "meow");
-	cat->setIdea(1, "hiss");
-	Animal * catCopy = new Cat(*((Cat*)cat));
+	Animal *cat = new Cat();
+	((Cat *) cat)->setIdea(0, "meow");
+	((Cat *) cat)->setIdea(1, "hiss");
+	Animal *catCopy = new Cat(*((Cat *) cat));
 	std::cout << std::endl << "After coping" << std::endl;
-	std::cout << "Cat ideas: " << cat->getIdea(0) << ", " << cat->getIdea(1) << std::endl;
-	std::cout << "CatCopy ideas: " << catCopy->getIdea(0) << ", " << catCopy->getIdea(1) << std::endl;
-	catCopy->setIdea(0, "growl");
-	catCopy->setIdea(1, "purr");
+	std::cout << "Cat ideas: " << ((Cat *) cat)->getIdea(0) << ", "
+			  << ((Cat *) cat)->getIdea(1) << std::endl;
+	std::cout << "CatCopy ideas: " << ((Cat *) catCopy)->getIdea(0) << ", "
+			  << ((Cat *) catCopy)->getIdea(1) << std::endl;
+	((Cat *) catCopy)->setIdea(0, "growl");
+	((Cat *) catCopy)->setIdea(1, "purr");
 	std::cout << std::endl << "After changing catCopy" << std::endl;
-	std::cout << "Cat ideas: " << cat->getIdea(0) << ", " << cat->getIdea(1) << std::endl;
-	std::cout << "CatCopy ideas: " << catCopy->getIdea(0) << ", " << catCopy->getIdea(1) << std::endl;
+	std::cout << "Cat ideas: " << ((Cat *) cat)->getIdea(0) << ", "
+			  << ((Cat *) cat)->getIdea(1) << std::endl;
+	std::cout << "CatCopy ideas: " << ((Cat *) catCopy)->getIdea(0) << ", "
+			  << ((Cat *) catCopy)->getIdea(1) << std::endl;
 	std::cout << std::endl;
 	delete cat;
 	delete catCopy;

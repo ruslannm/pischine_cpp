@@ -41,4 +41,5 @@ Dog::~Dog(void)
 void Dog::makeSound(void) const
 {
 	std::cout << "Gav!" << std::endl;
+	return;
 };
