@@ -5,7 +5,7 @@ template<typename T>
 Array<T>::Array(void): _array(NULL), _size(0) { 
 	std::cout << "Default contrustor is called." << std::endl;};
 template<typename T>
-		Array<T>::Array (unsigned int size) {
+		Array<T>::Array (const unsigned int & size) {
 			_size = size;
 			if (_size){
 				_array = new T[_size];
@@ -70,7 +70,7 @@ const char * Array<T>::IndexOutOfBonds::what (void) const throw() {
                     return "Index is out of bounds";};
 
 template<typename T>
-void	iter(Array<T>  arr, void (*fun)(T const &))
+void	iter(Array<T> & arr, void (*fun)(T const &))
 {
 	for (unsigned int i = 0; i < arr.size(); ++i){
 		fun(arr[i]);

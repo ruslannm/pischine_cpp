@@ -5,16 +5,13 @@
 template<typename T>
 class Array
 {
-	private:
-		T* 		_array;
-		unsigned int 	_size;
 	public:
-		Array (void);
-		Array (unsigned int);
-		Array (const Array&);
-		~Array (void);
+		Array(void);
+		Array(const unsigned int&);
+		Array(const Array<T>&);
+		~Array(void);
 
-		Array&	 operator=(const Array&);
+		Array<T>&	 operator=(const Array<T>&);
 
 		T&	operator[](int idx);
 		
@@ -24,11 +21,14 @@ class Array
 	public:
 		virtual const char *what(void) const throw();
 	};
+		private:
+		T* 		_array;
+		unsigned int 	_size;
 };
 
 
 template<typename T>
-void	iter(Array<T>, void (*fun)(T const &));
+void	iter(Array<T>&, void (*fun)(T const &));
 
 template<typename T>
 void	printElement(T &);

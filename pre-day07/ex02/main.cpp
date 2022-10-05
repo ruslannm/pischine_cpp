@@ -30,9 +30,12 @@ Array<int> arrInt1(arrInt);
     arrInt2 = arrInt;
     iter(arrInt2, &printElement);
 std::cout	<< "Test copy constructur and assignment" << std::endl;
-    arrInt[0] = 100;
+    arrInt[0] = 1000;
+std::cout	<< "arrInt:" << std::endl;
 iter(arrInt, &printElement);
+std::cout	<< "arrInt1:" << std::endl;
 iter(arrInt1, &printElement);
+std::cout	<< "arrInt2:" << std::endl;
 iter(arrInt2, &printElement);
 std::cout	<< "Test exceptions" << std::endl;
     try

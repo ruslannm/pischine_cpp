@@ -4,7 +4,7 @@
 #include <iostream>
 
 template<typename T>
-void	iter(const T  *arr, const size_t size, void (*fun)(T const &))
+void	iter(const T  *arr, const size_t & size, void (*fun)(T const &))
 {
 	for (size_t i = 0; i < size; ++i){
 		fun(arr[i]);
@@ -13,7 +13,7 @@ void	iter(const T  *arr, const size_t size, void (*fun)(T const &))
 };
 
 template<typename T>
-void	printElement(T & element)
+void	printElement(const T & element)
 {
 	std::cout << element << std::endl;
     return;
