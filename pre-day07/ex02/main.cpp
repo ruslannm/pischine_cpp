@@ -8,35 +8,29 @@ int main(void)
 {	
      std::cout	<< "Test canonical methods" << std::endl;
     Array<int> arrDefault;
-
-    iter(arrDefault, &printElement);
-    
+    std::cout << "arrDefault " << arrDefault << std::endl;
+  
     Array<int> arrInt(SIZE);
-
-
     for (unsigned int i = 0; i < SIZE; ++i)
     {
         arrInt[i] = i + 1;
 
     }
-    iter(arrInt, &printElement);
-Array<int> arrInt1(arrInt);
-  Array<int> arrInt2(SIZE_2);
-   for (unsigned int i = 0; i < SIZE_2; ++i)
+    std::cout << "arrInt " << arrInt << std::endl;
+    Array<int> arrInt1(arrInt);
+    std::cout << "arrInt1 " << arrInt1 << std::endl;
+    Array<int> arrInt2(SIZE_2);
+    for (unsigned int i = 0; i < SIZE_2; ++i)
     {
         arrInt2[i] = i + 100;
     }
-    iter(arrInt2, &printElement);
+    std::cout << "arrInt2 " << arrInt2 << std::endl;
     arrInt2 = arrInt;
-    iter(arrInt2, &printElement);
-std::cout	<< "Test copy constructur and assignment" << std::endl;
+    std::cout << "arrInt2 " << arrInt2 << std::endl;
     arrInt[0] = 1000;
-std::cout	<< "arrInt:" << std::endl;
-iter(arrInt, &printElement);
-std::cout	<< "arrInt1:" << std::endl;
-iter(arrInt1, &printElement);
-std::cout	<< "arrInt2:" << std::endl;
-iter(arrInt2, &printElement);
+std::cout << "arrInt" << arrInt << std::endl;
+std::cout << "arrInt1" << arrInt1 << std::endl;
+std::cout << "arrInt2" << arrInt2 << std::endl;
 std::cout	<< "Test exceptions" << std::endl;
     try
     {

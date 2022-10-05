@@ -1,6 +1,7 @@
 #ifndef ARRAY_HPP
 #define ARRAY_HPP
 #include <iostream>
+#include <iomanip>
 
 template<typename T>
 class Array
@@ -13,8 +14,8 @@ class Array
 
 		Array<T>&	 operator=(const Array<T>&);
 
-		T&	operator[](int idx);
-		
+		T&	operator[](const int &);
+		T const &	operator[](const int &) const;		
 		unsigned int	size(void) const;
 		class IndexOutOfBonds : public std::exception
 	{
@@ -27,11 +28,11 @@ class Array
 };
 
 
-template<typename T>
-void	iter(Array<T>&, void (*fun)(T const &));
+
 
 template<typename T>
-void	printElement(T &);
+std::ostream & operator<<(std::ostream &, const Array<T> &);
+
 
 #include "Array.tpp"
 

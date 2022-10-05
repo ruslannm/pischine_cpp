@@ -53,13 +53,24 @@ template<typename T>
 			return *this;
 		};
 template<typename T>
-		T&	Array<T>::operator[](int idx)
+		T&	Array<T>::operator[](const int & idx)
 		{
 			if (0 <= idx && static_cast<unsigned int>(idx) < _size)
 				return _array[idx];
 			else
 				throw Array<T>::IndexOutOfBonds();
 		};
+
+template<typename T>
+		T const &	Array<T>::operator[](const int & idx) const
+		{
+			if (0 <= idx && static_cast<unsigned int>(idx) < _size)
+				return _array[idx];
+			else
+				throw Array<T>::IndexOutOfBonds();
+		};
+
+
 template<typename T>
 unsigned		int	Array<T>::size(void) const
 		{
@@ -70,19 +81,21 @@ const char * Array<T>::IndexOutOfBonds::what (void) const throw() {
                     return "Index is out of bounds";};
 
 template<typename T>
-void	iter(Array<T> & arr, void (*fun)(T const &))
-{
+std::ostream & operator<<(std::ostream & o, const Array<T> & arr){
+	std::cout.precision(1);
+	o << std::setiosflags(std::ios::fixed);
+	o << "Array (";
 	for (unsigned int i = 0; i < arr.size(); ++i){
-		fun(arr[i]);
+		o << arr[i];
+		if (i < arr.size() - 1){
+			o << ", ";
+		}
     }
-    return;
-};
+	o << ")";
+	return o;
+}
 
-template<typename T>
-void	printElement(T & element)
-{
-	std::cout << element << std::endl;
-    return;
-};
+
+
 
 #endif
