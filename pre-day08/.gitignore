@@ -1,0 +1,11 @@
+*.o
+*.d
+megaphone
+.idea
+CMakeLists.txt
+cmake-build-debug
+phonebook
+Makefile1
+account
+*.log
+.vscode
